@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>East Meets West - VIP Experience 2026</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- ===== NAVIGATION ===== -->
+    <nav class="navbar" id="mainNav">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-icon">◆</span>
+                <span class="logo-text">EAST MEETS WEST</span>
+            </div>
+            <div class="nav-links">
+                <a href="#packages">Packages</a>
+                <a href="#venue">Venue</a>
+                <a href="#about">About</a>
+                <a href="#" id="adminLink" class="admin-link">Admin</a>
+                <button class="nav-cta" id="navBookNow">Book Now</button>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+        </div>
+    </nav>
+
+    <!-- ===== HERO SECTION ===== -->
+    <section class="hero" id="home">
+        <div class="hero-overlay"></div>
+        <div class="hero-particles" id="heroParticles"></div>
+        <div class="hero-content">
+            <div class="hero-badge">VIP EXPERIENCE 2026</div>
+            <h1>East Meets <span>West</span></h1>
+            <p class="hero-subtitle">An exclusive fusion of culture, cuisine, and celebration</p>
+            <div class="hero-details">
+                <span>15-17 October 2026</span>
+                <span>Cape Town, South Africa</span>
+                <span>Limited VIP Sections Available</span>
+            </div>
+            <div class="hero-actions">
+                <a href="#packages" class="btn-primary btn-large">Secure Your VIP Section</a>
+                <a href="#venue" class="btn-secondary btn-large">View Venue Map</a>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <span>Scroll</span>
+            <div class="scroll-arrow">↓</div>
+        </div>
+    </section>
+
+    <!-- ===== ABOUT / EVENT INFO ===== -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text">
+                    <span class="section-tag">The Experience</span>
+                    <h2>Where East Meets West</h2>
+                    <p>An unprecedented fusion of Eastern elegance and Western sophistication. This exclusive VIP event brings together the finest in cuisine, entertainment, and cultural celebration.</p>
+                    <div class="about-features">
+                        <div>
+                            <span class="about-icon">🍽</span>
+                            <h4>World-Class Cuisine</h4>
+                            <p>Michelin-starred chefs from both hemispheres</p>
+                        </div>
+                        <div>
+                            <span class="about-icon">🎵</span>
+                            <h4>Live Entertainment</h4>
+                            <p>International performers and DJs</p>
+                        </div>
+                        <div>
+                            <span class="about-icon">🥂</span>
+                            <h4>Premium Bar</h4>
+                            <p>Exclusive cocktails and premium spirits</p>
+                        </div>
+                        <div>
+                            <span class="about-icon">🤝</span>
+                            <h4>VIP Networking</h4>
+                            <p>Connect with industry leaders and influencers</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="about-image-placeholder">
+                        <span>◆</span>
+                        <p>EAST MEETS WEST</p>
+                        <small>VIP Experience 2026</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PACKAGES SECTION ===== -->
+    <section class="packages-section" id="packages">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Choose Your Experience</span>
+                <h2>VIP Packages</h2>
+                <p>Select your preferred package and secure your exclusive VIP section at East Meets West 2026</p>
+            </div>
+            <div class="packages-grid" id="packagesGrid">
+                <!-- Packages rendered by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== VENUE MAP SECTION ===== -->
+    <section class="venue-section" id="venue">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Select Your Section</span>
+                <h2>Interactive Venue Map</h2>
+                <p>Choose your VIP section on our interactive venue map - similar to selecting a seat on a flight</p>
+                <div class="legend">
+                    <span><span class="legend-dot available"></span> Available</span>
+                    <span><span class="legend-dot reserved"></span> Reserved</span>
+                    <span><span class="legend-dot sold"></span> Sold</span>
+                    <span><span class="legend-dot selected"></span> Selected</span>
+                </div>
+            </div>
+            <div class="venue-container">
+                <div class="stage-label">STAGE</div>
+                <div class="venue-map" id="venueMap">
+                    <!-- Venue sections rendered by JavaScript -->
+                </div>
+                <div class="entrance-label">ENTRANCE</div>
+            </div>
+            <div id="selectedSectionInfo" class="selected-info">
+                <!-- Selected section details appear here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== BOOKING MODAL ===== -->
+    <div class="modal" id="bookingModal">
+        <div class="modal-content">
+            <span class="modal-close" id="modalClose">&times;</span>
+            <div class="modal-header">
+                <h2>Confirm Your VIP Booking</h2>
+                <p style="color:rgba(255,255,255,0.4);font-size:0.9rem;">Complete your reservation below</p>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Booking details rendered by JavaScript -->
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" id="modalCancel">Cancel</button>
+                <button class="btn-primary" id="modalConfirm">Confirm & Continue</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== SUCCESS MODAL ===== -->
+    <div class="modal" id="successModal">
+        <div class="modal-content success-content">
+            <div class="success-icon">✓</div>
+            <h2>Booking Confirmed</h2>
+            <p>Your VIP section has been successfully reserved. A confirmation has been sent to your email.</p>
+            <div id="successDetails"></div>
+            <button class="btn-primary" id="successClose">Done</button>
+        </div>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <span class="logo-icon">◆</span>
+                    <span class="logo-text">EAST MEETS WEST</span>
+                    <p>An exclusive VIP experience celebrating the fusion of Eastern and Western cultures.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <a href="#packages">Packages</a>
+                    <a href="#venue">Venue Map</a>
+                    <a href="#about">About</a>
+                    <a href="#" id="footerAdminLink">Admin</a>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p>info@eastmeetswest.events</p>
+                    <p>+27 82 123 4567</p>
+                    <p>Cape Town, South Africa</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 East Meets West. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
