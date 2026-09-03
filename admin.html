@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - East Meets West</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- ===== ADMIN NAVIGATION ===== -->
+    <nav class="navbar admin-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-icon">◆</span>
+                <span class="logo-text">EAST MEETS WEST • ADMIN</span>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">← Back to Site</a>
+                <a href="#" id="logoutBtn">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== ADMIN DASHBOARD ===== -->
+    <div class="admin-container">
+        <!-- Stats Dashboard -->
+        <div class="stats-grid" id="statsGrid">
+            <div class="stat-card">
+                <span class="stat-label">Total Sections</span>
+                <span class="stat-value" id="totalSections">0</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-label">Sold</span>
+                <span class="stat-value" id="soldSections">0</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-label">Available</span>
+                <span class="stat-value" id="availableSections">0</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-label">Reserved</span>
+                <span class="stat-value" id="reservedSections">0</span>
+            </div>
+            <div class="stat-card highlight">
+                <span class="stat-label">Total Revenue</span>
+                <span class="stat-value" id="totalRevenue">R0</span>
+            </div>
+        </div>
+
+        <!-- Admin Venue Map -->
+        <div class="admin-section">
+            <div class="section-header-row">
+                <h2>Venue Overview</h2>
+                <div class="admin-controls">
+                    <button class="btn-secondary" id="refreshAdminBtn" style="padding:8px 16px;font-size:0.8rem;">Refresh View</button>
+                </div>
+            </div>
+            <div class="admin-venue-container">
+                <div class="stage-label">STAGE</div>
+                <div class="venue-map" id="adminVenueMap">
+                    <!-- Admin venue sections rendered by JavaScript -->
+                </div>
+                <div class="entrance-label">ENTRANCE</div>
+            </div>
+        </div>
+
+        <!-- Bookings Table -->
+        <div class="admin-section">
+            <div class="section-header-row">
+                <h2>All Bookings</h2>
+                <div class="admin-filters">
+                    <input type="text" id="searchBookings" placeholder="Search by name or booking..." />
+                    <select id="filterPackage">
+                        <option value="all">All Packages</option>
+                        <option value="R100K">R100K Platinum</option>
+                        <option value="R50K">R50K Gold</option>
+                        <option value="R30K">R30K Silver</option>
+                        <option value="R15K">R15K Bronze</option>
+                    </select>
+                    <select id="filterStatus">
+                        <option value="all">All Status</option>
+                        <option value="paid">Paid</option>
+                        <option value="pending">Pending</option>
+                    </select>
+                </div>
+            </div>
+            <div class="table-container">
+                <table class="bookings-table">
+                    <thead>
+                        <tr>
+                            <th>Booking</th>
+                            <th>Customer</th>
+                            <th>Package</th>
+                            <th>Section</th>
+                            <th>Guests</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="bookingsTableBody">
+                        <!-- Bookings rendered by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Export Section -->
+        <div class="admin-section">
+            <div class="section-header-row">
+                <h2>Reports & Export</h2>
+                <div>
+                    <button class="btn-secondary" id="exportCSVBtn" style="padding:8px 16px;font-size:0.8rem;">Export CSV</button>
+                </div>
+            </div>
+            <div style="background:var(--black-light);border:1px solid rgba(255,255,255,0.05);border-radius:var(--radius);padding:24px;">
+                <p style="color:rgba(255,255,255,0.4);font-size:0.9rem;">Download booking data and attendee lists for event management.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== BOOKING DETAIL MODAL ===== -->
+    <div class="modal" id="bookingDetailModal">
+        <div class="modal-content">
+            <span class="modal-close" id="detailModalClose">&times;</span>
+            <div class="modal-header">
+                <h2>Booking Details</h2>
+            </div>
+            <div class="modal-body" id="detailModalBody">
+                <!-- Booking details rendered by JavaScript -->
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" id="detailModalCloseBtn">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="admin.js"></script>
+</body>
+</html>
